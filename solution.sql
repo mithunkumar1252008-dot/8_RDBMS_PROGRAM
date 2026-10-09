@@ -1,39 +1,34 @@
--- ============================================
--- SOLUTION - EMPLOYEE AGGREGATE FUNCTIONS
--- ============================================
-
-USE CollegeDB;
-
+create database mithun;
+use mithun;
 -- Create Employee table
 CREATE TABLE Employee (
     EmployeeID INT PRIMARY KEY,
-    EmployeeName VARCHAR(30) NOT NULL,
-    Department VARCHAR(20) NOT NULL,
-    Salary DECIMAL(10,2) NOT NULL
+    EmployeeName VARCHAR(30),
+    Department VARCHAR(20),
+    Salary INT
 );
 
--- Insert employee records
-INSERT INTO Employee
-    (EmployeeID, EmployeeName, Department, Salary)
+-- Insert records
+INSERT INTO Employee (EmployeeID, EmployeeName, Department, Salary)
 VALUES
-    (101, 'Ravi', 'HR', 25000),
-    (102, 'Meena', 'IT', 40000),
-    (103, 'Kumar', 'Finance', 35000),
-    (104, 'Suresh', 'IT', 45000),
-    (105, 'Latha', 'HR', 30000);
+(101, 'Ravi', 'HR', 25000),
+(102, 'Meena', 'IT', 40000),
+(103, 'Kumar', 'Finance', 35000),
+(104, 'Suresh', 'IT', 45000),
+(105, 'Latha', 'HR', 30000);
 
--- COUNT() - Count the number of salaries
+-- COUNT: Number of employees
 SELECT COUNT(Salary) AS Total_Employees
 FROM Employee;
 
--- MAX() - Find the highest salary
-SELECT MAX(Salary) AS Maximum_Salary
+-- MAX: Highest salary
+SELECT MAX(Salary) AS Highest_Salary
 FROM Employee;
 
--- MIN() - Find the lowest salary
-SELECT MIN(Salary) AS Minimum_Salary
+-- MIN: Lowest salary
+SELECT MIN(Salary) AS Lowest_Salary
 FROM Employee;
 
--- AVG() - Find the average salary
+-- AVG: Average salary
 SELECT AVG(Salary) AS Average_Salary
 FROM Employee;
